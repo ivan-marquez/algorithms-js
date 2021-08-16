@@ -57,16 +57,37 @@ function binarySearch(arr, val) {
   var mid = Math.floor((start + end) / 2);
 
   while (arr[mid] !== val && start <= end) {
-    if (val < arr[mid]) {
-      end = mid - 1;
-    } else {
-      start = mid + 1;
-    }
+    if (val < arr[mid]) end = mid - 1;
+    else start = mid + 1;
     mid = Math.floor((start + end) / 2);
   }
 
-  console.log('??:', mid);
   return arr[mid] === val ? mid : -1;
 }
 
 console.log(binarySearch([1, 2, 3, 4, 5], 2));
+
+/**
+ * Brute-force String Search
+ *
+ * Pseudocode:
+ * Loop over the longer string
+ * Loop over the shorter string
+ * If the characters don't match, break out of the inner loop
+ * If the characters do match, keep going
+ * If you complete the inner loop and find a match, increment
+ * the count of matches
+ * Return the count
+ */
+function stringSearch(str, substr) {
+  var counter = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    for (let j = 0; j < substr.length; j++) {
+      if (substr[j] !== str[i + j]) break;
+      if (j === substr.length - 1) counter++;
+    }
+  }
+
+  return counter;
+}

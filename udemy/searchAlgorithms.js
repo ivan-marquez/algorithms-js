@@ -28,7 +28,7 @@ function linearSearch(arr, val) {
   return -1;
 }
 
-console.log(linearSearch([1, 3, 4], 3));
+// console.log(linearSearch([1, 3, 4], 3));
 
 /**
  * Binary Search
@@ -54,12 +54,19 @@ console.log(linearSearch([1, 3, 4], 3));
 function binarySearch(arr, val) {
   var start = 0;
   var end = arr.length - 1;
-  var mid = (start + end) / 2;
+  var mid = Math.floor((start + end) / 2);
 
-  if (arr[mid] === val) return mid;
-  else if (arr[mid] > val) return binarySearch(arr.slice(mid), val);
-  else if (arr[mid] < val) return binarySearch(arr.slice(0, mid), val);
-  else return -1;
+  while (arr[mid] !== val && start <= end) {
+    if (val < arr[mid]) {
+      end = mid - 1;
+    } else {
+      start = mid + 1;
+    }
+    mid = Math.floor((start + end) / 2);
+  }
+
+  console.log('??:', mid);
+  return arr[mid] === val ? mid : -1;
 }
 
-console.log(binarySearch([1, 2, 3, 4, 5], 4));
+console.log(binarySearch([1, 2, 3, 4, 5], 2));

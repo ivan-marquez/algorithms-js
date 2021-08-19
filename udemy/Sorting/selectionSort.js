@@ -22,6 +22,7 @@ function selectionSort(arr) {
       }
     }
 
+    // this is to avoid swapping in cases where i is already the minimum value
     if (i !== lowest) {
       let tmp = arr[i];
       arr[i] = arr[lowest];

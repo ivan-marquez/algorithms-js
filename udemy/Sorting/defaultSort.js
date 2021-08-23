@@ -23,3 +23,6 @@ function compareByLength(str1, str2) {
 
 // array with random numbers for sorting practice
 var data = Array.apply(null, { length: 10 }).map(Function.call, Math.random);
+
+// Sorting Algorithms Animations
+// https://www.toptal.com/developers/sorting-algorithms

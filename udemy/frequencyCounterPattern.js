@@ -46,7 +46,7 @@ function samev2(arr1, arr2) {
    *  loop through arr1: val
    *    assign val as key or increment amount of times val exists in arr1
    *  loop through arr2: val
-   *    assign val as key or increment amount of times val exists in arr2
+   *    assign squared val as key or increment amount of times val exists in arr2
    *  loop through obj1: k
    *    check if k^2 is not a key in obj2
    *      return false
@@ -116,6 +116,7 @@ function validAnagram(str1, str2) {
 
   for (let i = 0; i < first.length; i++) {
     let letter = str1[i];
+    // increase or initialize
     lookup[letter] ? (lookup[letter] += 1) : (lookup[letter] = 1);
   }
 

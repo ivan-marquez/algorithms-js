@@ -20,3 +20,6 @@ function compareByLength(str1, str2) {
 }
 
 ['Steele', 'Colt', 'Data Structures', 'Algorithms'].sort(compareByLength);
+
+// array with random numbers for sorting practice
+var data = Array.apply(null, { length: 10 }).map(Function.call, Math.random);

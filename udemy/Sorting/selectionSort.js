@@ -5,7 +5,7 @@
  * it places small values into sorted position.
  *
  * Pseudocode:
- * Store the first element as the smalles value you've seen so far.
+ * Store the first element as the smallest value you've seen so far.
  * Compare this item to the next item in the array until you find a smaller number.
  * If a smaller number is found, designate that smaller number to be the new "minimum"
  * and continue until the end of the array.

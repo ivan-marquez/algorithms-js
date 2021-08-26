@@ -26,3 +26,4 @@ var data = Array.apply(null, { length: 10 }).map(Function.call, Math.random);
 
 // Sorting Algorithms Animations
 // https://www.toptal.com/developers/sorting-algorithms
+// https://visualgo.net/en/sorting

@@ -253,7 +253,7 @@ class Graph {
    * Loop while there is anything in the queue
    *   dequeue from queue and push it into the nodes visited array
    *   loop through each vertex in the adjacency list of current vertex
-   *     if it's not inside the object that stores nodes visited,
+   *     if it's not inside the object that stores nodes visited:
    *       mark as visited
    *       enqueue vertex
    *   return visited nodes array

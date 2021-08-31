@@ -27,3 +27,13 @@ var data = Array.apply(null, { length: 10 }).map(Function.call, Math.random);
 // Sorting Algorithms Animations
 // https://www.toptal.com/developers/sorting-algorithms
 // https://visualgo.net/en/sorting
+
+/**
+ * Comparison Sorts: Average Time Complexity
+ *
+ * Bubble Sort    - O(n^2)
+ * Insertion Sort - O(n^2)
+ * Selection Sort - O(n^2)
+ * Quick Sort     - O(n log(n))
+ * Merge Sort     - O(n log(n))
+ */

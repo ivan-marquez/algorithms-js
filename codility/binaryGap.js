@@ -22,11 +22,11 @@ function solution(N) {
   var currentGap = 0;
 
   for (let i of bin) {
-    if (i == 0) {
+    if (i === 0) {
       currentGap += 1;
     }
 
-    if (i == 1) {
+    if (i === 1) {
       maxGap = Math.max(maxGap, currentGap);
       currentGap = 0;
     }

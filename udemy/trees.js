@@ -98,9 +98,9 @@ class BinarySearchTree {
     var found = false;
 
     while (current && !found) {
-      if (value < current.value) {
+      if (val < current.value) {
         current = current.left;
-      } else if (value > current.value) {
+      } else if (val > current.value) {
         current = current.right;
       } else {
         found = true;

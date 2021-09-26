@@ -70,11 +70,13 @@ function samev2(arr1, arr2) {
     obj2[val] = (obj2[val] || 0) + 1;
   }
 
+  // compare keys
   for (let key of obj1) {
     if (!(key ** 2 in obj2)) {
       return false;
     }
 
+    // compare values
     if (obj2[key ** 2] !== obj1[key]) {
       return false;
     }
@@ -114,7 +116,7 @@ function validAnagram(str1, str2) {
 
   var lookup = {};
 
-  for (let i = 0; i < first.length; i++) {
+  for (let i = 0; i < str1.length; i++) {
     let letter = str1[i];
     // increase or initialize
     lookup[letter] ? (lookup[letter] += 1) : (lookup[letter] = 1);

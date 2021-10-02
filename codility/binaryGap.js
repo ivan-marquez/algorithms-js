@@ -40,11 +40,11 @@ function solution(N) {
   var currentGap = 0;
 
   for (let i of bin) {
-    if (parseInt(i) === 0) {
+    if (parseInt(i, 10) === 0) {
       currentGap += 1;
     }
 
-    if (parseInt(i) === 1) {
+    if (parseInt(i, 10) === 1) {
       maxGap = Math.max(maxGap, currentGap);
       currentGap = 0;
     }

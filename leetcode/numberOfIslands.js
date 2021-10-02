@@ -11,13 +11,13 @@
  * islandCounter variable with number of islands
  * loop through grid rows
  *   loop through grid columns
- *     if current position is an island
+ *     if current position is land
  *       increment island counter
  *       DFS(grid, row, column)
  * return islandCounter
  *
  * Declare DFS function (arguments: grid, row, column)
- * check if row or column indices are out of bounds, or current
+ * check if row or column indices are out of bounds, or
  * if the current position is water
  *   return;
  * mark current position as visited

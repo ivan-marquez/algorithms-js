@@ -27,10 +27,10 @@
  *
  * invoke dfs function on all neighbors
  * result variable to store value from all invocations:
- *   dfs(board, word, row + 1, column, wordIndex + 1) // up
- *   dfs(board, word, row - 1, column, wordIndex + 1) // down
- *   dfs(board, word, row, column + 1, wordIndex + 1) // right
- *   dfs(board, word, row, column - 1, wordIndex + 1) // left
+ *   DFS(board, word, row + 1, column, wordIndex + 1) // up
+ *   DFS(board, word, row - 1, column, wordIndex + 1) // down
+ *   DFS(board, word, row, column + 1, wordIndex + 1) // right
+ *   DFS(board, word, row, column - 1, wordIndex + 1) // left
  *
  * backtracking: reset the position value with temp variable
  *
@@ -40,10 +40,8 @@
 const exist = function (board, word) {
   for (let row = 0; row < board.length; row++) {
     for (let column = 0; column < board[0].length; ++column) {
-      // check for the first letter match in the board
       if (board[row][column] === word[0]) {
         if (wordSearch(board, row, column, word, 0)) {
-          // if word is completely matched
           return true;
         }
       }
@@ -55,13 +53,10 @@ const exist = function (board, word) {
 
 // DFS
 function wordSearch(board, row, column, word, wordIndex) {
-  // when the word is completely matched
   if (wordIndex === word.length) {
     return true;
   }
 
-  // if indices are out of bounds or if the letter at the board is not
-  // equal to the letter of the given word, return false
   if (
     row < 0 ||
     row >= board.length ||

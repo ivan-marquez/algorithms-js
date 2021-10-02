@@ -14,27 +14,28 @@
  * }
  */
 
+/*
+ * Approach: DFS
+ * Visit each node once and compare with max num using recursion.
+ *
+ * Pseudocode:
+ * goodNodesCount variable to store amount of good nodes.
+ * Define DFS function that takes a node and a number representing the
+ * greatest value from root node to current node (maxNum).
+ * In DFS function:
+ * if max <= node.val:
+ *  goodNodesCount++
+ * Call DFS function passing child node and maximum between node.val
+ * and max (for all node's children).
+ * Call DFS(root, root.val)
+ * Return goodNodesCount
+ */
+
 /**
  * @param {TreeNode} root
  * @return {number}
  */
 var goodNodes = function (root) {
-  /*
-   * Approach: DFS
-   * Visit each node once and compare with max num using recursion.
-   *
-   * Pseudocode:
-   * goodNodesCount variable to store amount of good nodes.
-   * Define DFS function that takes a node and a number representing the
-   * greatest value from root node to current node (maxNum).
-   * In DFS function:
-   * if max <= node.val:
-   *  goodNodesCount++
-   * Call DFS function passing child node and maximum between node.val
-   * and max (for all node's children).
-   * Call DFS(root, root.val)
-   * Return goodNodesCount.
-   */
   var goodNodesCount = 0;
 
   let dfs = (node, maxNum) => {

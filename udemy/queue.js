@@ -11,17 +11,17 @@
 var q = [];
 
 // add to the end of array
-q.push('FIRST');
-q.push('SECOND');
-q.push('THIRD');
+q.push("FIRST");
+q.push("SECOND");
+q.push("THIRD");
 
 // remove from the beginning of array
 q.shift();
 
 // add to the beginning of array
-q.unshift('FIRST');
-q.unshift('SECOND');
-q.unshift('THIRD');
+q.unshift("FIRST");
+q.unshift("SECOND");
+q.unshift("THIRD");
 
 // remove from the end of array
 q.pop();
@@ -73,6 +73,6 @@ class Queue {
     this.first = this.first.next;
     this.size--;
 
-    return temp.value;
+    return tmp.value;
   }
 }

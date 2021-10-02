@@ -16,7 +16,7 @@ var sumZero = function (n) {
    * while n > 1:
    *   push to arr neg--
    *   push to arr pos++
-   *   reduce n by 2
+   *   decrease n by 2
    *
    * if number is odd:
    *   push 0 to arr

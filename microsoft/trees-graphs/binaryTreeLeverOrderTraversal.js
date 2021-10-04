@@ -19,6 +19,21 @@
  * Output: [[3],[9,20],[15,7]]
  * Approach: Breadth First Search
  * Pseudocode:
+ * if root null, return []
+ * var queue to store queue
+ * var result to return result
+ *
+ * while queue is not empty
+ *   var qlen to store queue.length
+ *   var node to store first item in queue
+ *   var row to store node val
+ *
+ *   loop qlen times:
+ *     if node left has value, push node left to queue
+ *     if node right has value, push node right to queue
+ *   push row into result
+ *
+ * return result
  */
 const levelOrder = function (root) {
   if (!root) return [];
@@ -32,6 +47,7 @@ const levelOrder = function (root) {
     let row = [];
 
     for (let i = 0; i < qLen; i++) {
+      console.log(qLen);
       node = queue.shift();
       row.push(node.val);
 

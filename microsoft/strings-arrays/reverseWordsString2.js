@@ -38,9 +38,10 @@ const reverseWords = function (str) {
   const reverseWord = (left, right) => {
     if (left >= right) return;
 
-    var tmp = str[left];
-    str[left] = str[right];
-    str[right] = tmp;
+    // const tmp = str[left];
+    // str[left] = str[right];
+    // str[right] = tmp;
+    [str[left], str[right]] = [str[right], str[left]];
 
     reverseWord(left + 1, right - 1);
   };

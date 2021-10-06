@@ -47,7 +47,6 @@ const levelOrder = function (root) {
     let row = [];
 
     for (let i = 0; i < qLen; i++) {
-      console.log(qLen);
       node = queue.shift();
       row.push(node.val);
 

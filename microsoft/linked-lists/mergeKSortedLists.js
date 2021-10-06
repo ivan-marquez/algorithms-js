@@ -25,31 +25,41 @@
 /**
  * @param {ListNode[]} lists
  * @return {ListNode}
- * Approach: Divide and Conquer (we don't need to traverse most nodes many times repeatedly)
+ * Approach: Sorting
  * Pseudocode:
+ * if lists is null or empty, return null
+ * place all values in an array
+ * result = new ListNode()
+ * curr = result
+ * sort the array (asc)
+ * for each item in array
+ *   create new node with item value
+ *   curr.next = new node
  *
+ * return result.next;
  */
 const mergeKLists = function (lists) {
   if (!lists || !lists.length) return null;
 
   var arr = [];
-  var result = new ListNode(-1);
 
-  lists.forEach((list) => {
+  for (let list of lists) {
     let curr = list;
     while (curr) {
       arr.push(curr.val);
       curr = curr.next;
     }
-  });
+  }
 
-  var curr = result;
-  arr
-    .sort((a, b) => a - b)
-    .forEach((n) => {
-      let temp = new ListNode(n);
-      curr = curr.next;
-    });
+  arr.sort((a, b) => a - b);
 
-  return result.next;
+  var newNode = new ListNode();
+  var curr = newNode;
+
+  for (let val of arr) {
+    curr = new ListNode(val);
+    curr = curr.next;
+  }
+
+  return curr.next;
 };

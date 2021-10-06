@@ -50,18 +50,19 @@ const addTwoNumbers = function (l1, l2) {
   var carry = 0;
 
   while (l1 || l2 || carry > 0) {
+    // compute new digit
     let v1 = l1 ? l1.val : 0;
     let v2 = l2 ? l2.val : 0;
+    let sum = v1 + v2 + carry;
 
-    // compute new digit
-    let sum = v1 + v2 + carry; // = 39
-    carry = Math.floor(sum / 10); // 3
-    curr.next = new ListNode(sum % 10); // 9
+    // update carry
+    carry = Math.floor(sum / 10);
+    curr.next = new ListNode(sum % 10);
 
     // update pointers
-    curr = curr.next;
     if (l1) l1 = l1.next;
     if (l2) l2 = l2.next;
+    curr = curr.next;
   }
 
   return newNode.next;
